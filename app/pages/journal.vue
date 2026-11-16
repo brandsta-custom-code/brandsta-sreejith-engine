@@ -1,3 +1,5 @@
+<!-- app/pages/journal.vue -->
+
 <template>
   <div>
     <AuthGate
@@ -36,8 +38,9 @@
 <script setup lang="ts">
 const { auth, isLoggedIn, isLoading, isRestoring, authError, verifySession, logout } = useStudioAuth()
 
-useSeoMeta({
-  title: 'Journal Studio — Data - Sree Jith Travel',
-  robots: 'noindex, nofollow'
-})
+// app/pages/journal.vue
+import { useConciergeSeo } from '../composables/useConciergeSeo'
+
+useConciergeSeo('journal')
+
 </script>

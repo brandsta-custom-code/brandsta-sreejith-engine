@@ -1,3 +1,5 @@
+<!-- app/pages/testimonials.vue -->
+
 <template>
   <div>
     <AuthGate
@@ -36,8 +38,9 @@
 <script setup lang="ts">
 const { auth, isLoggedIn, isLoading, isRestoring, authError, verifySession, logout } = useStudioAuth()
 
-useSeoMeta({
-  title: 'Testimonials Engine — Data - Sree Jith Travel',
-  robots: 'noindex, nofollow'
-})
+// app/pages/testimonials.vue
+import { useConciergeSeo } from '../composables/useConciergeSeo'
+
+useConciergeSeo('testimonials')
+
 </script>

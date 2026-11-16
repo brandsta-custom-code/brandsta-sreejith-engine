@@ -1,7 +1,9 @@
+// nuxt.config.ts
 import tailwindcss from '@tailwindcss/vite'
 
 export default defineNuxtConfig({
   compatibilityDate: '2026-11-01',
+  ssr: true,
   devtools: { enabled: false },
 
   devServer: {
@@ -35,6 +37,10 @@ export default defineNuxtConfig({
 
   vite: {
     plugins: [tailwindcss()]
+  },
+
+  features: {
+    inlineStyles: true
   },
 
   nitro: {
@@ -82,10 +88,10 @@ export default defineNuxtConfig({
           name: 'description',
           content: 'A dedicated content management dashboard for Sree Jith Travel, featuring itineraries, insights, stories and website content - Powered by Brandsta.'
         },
-        // CRITICAL: Block search engine indexing on private concierge tool
+        // Block search engine indexing while allowing WhatsApp/Slack/X link unfurlers
         { name: 'robots', content: 'noindex, nofollow, noarchive' },
         { name: 'author', content: 'kriz - https://brandsta.in' },
-        { name: 'application-name', content: 'Data - Sree Jith Travel' },
+        { name: 'application-name', content: 'Digital Concierge - Sree Jith Travel' },
 
         // Local Business Geographic Coordinates (Kakkayur, Palakkad, Kerala)
         { name: 'geo.region', content: 'IN-KL' },
@@ -93,10 +99,10 @@ export default defineNuxtConfig({
         { name: 'geo.position', content: '10.6566728;76.6299029' },
         { name: 'ICBM', content: '10.6566728, 76.6299029' },
 
-        // Windows PWA & Mobile Meta Tags
-        { name: 'msapplication-TileColor', content: '#030712' },
+        // Windows PWA & Mobile Meta Tags (#051b3b Unified)
+        { name: 'msapplication-TileColor', content: '#051b3b' },
         { name: 'msapplication-TileImage', content: '/images/favicons/ms-icon-144x144.png' },
-        { name: 'theme-color', content: '#030712' },
+        { name: 'theme-color', content: '#051b3b' },
         { name: 'msapplication-config', content: '/browserconfig.xml' },
 
         // Apple Safari & PWA Customizations
@@ -105,7 +111,7 @@ export default defineNuxtConfig({
         { name: 'apple-mobile-web-app-status-bar-style', content: 'black-translucent' },
         { name: 'apple-mobile-web-app-title', content: 'Digital Hub - Sree Jith Travel' },
 
-        // Global Social Layout Standards (1200x630 JPG)
+        // Global Social Layout Standards (Shared 1200x630 JPG across all 5 routes)
         { property: 'og:type', content: 'website' },
         { property: 'og:locale', content: 'en_IN' },
         { property: 'og:site_name', content: 'Digital Hub - Sree Jith Travel' },
@@ -113,22 +119,24 @@ export default defineNuxtConfig({
         { property: 'og:title', content: 'Digital Concierge | Sree Jith Travel - Brandsta' },
         {
           property: 'og:description',
-          content: 'Designing luxury bespoke journeys bringing together meaningful experiences and authentic stories across Kerala and South India.'
+          content: 'A dedicated content management dashboard for Sree Jith Travel, featuring itineraries, insights, stories and website content - Powered by Brandsta.'
         },
-        { property: 'og:image', content: 'https://sreejith.brandsta.cc/images/og/home.jpg' },
+        { property: 'og:image', content: 'https://sreejith.brandsta.cc/images/og/custom-code.jpg' },
+        { property: 'og:image:secure_url', content: 'https://sreejith.brandsta.cc/images/og/custom-code.jpg' },
         { property: 'og:image:width', content: '1200' },
         { property: 'og:image:height', content: '630' },
         { property: 'og:image:type', content: 'image/jpeg' },
+        { property: 'og:image:alt', content: 'Digital Concierge | Sree Jith Travel - Brandsta' },
 
         // Twitter / X Layout Standards
         { name: 'twitter:card', content: 'summary_large_image' },
         { name: 'twitter:url', content: 'https://sreejith.brandsta.cc/' },
         { name: 'twitter:title', content: 'Digital Concierge | Sree Jith Travel - Brandsta' },
         {
-          name: 'twitter:description',  
+          name: 'twitter:description',
           content: 'A dedicated content management dashboard for Sree Jith Travel, featuring itineraries, insights, stories and website content - Powered by Brandsta.'
         },
-        { name: 'twitter:image', content: 'https://sreejith.brandsta.cc/images/og/home.jpg' }
+        { name: 'twitter:image', content: 'https://sreejith.brandsta.cc/images/og/custom-code.jpg' }
       ],
 
       link: [

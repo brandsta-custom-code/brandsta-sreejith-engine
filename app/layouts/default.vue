@@ -80,3 +80,10 @@ const moduleLabel = computed(() => {
   return 'Digital Concierge'
 })
 </script>
+
+
+git branch -M main
+git add .
+git commit -m "feat: complete step 1 concierge hub, dual-logo shell, and wp xml-rpc auth"
+git remote add origin https://github.com/brandsta-custom-code/brandsta-sreejith-engine.git
+git push -u origin main

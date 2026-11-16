@@ -1,3 +1,5 @@
+<!-- app/pages/index.vue -->
+
 <template>
   <div class="min-h-[calc(100dvh-93px)] grid place-items-center px-4 sm:px-6 py-10 relative overflow-hidden">
     <!-- Subtle GPU-safe Ambient Glows -->
@@ -165,12 +167,13 @@ const modules = [
   }
 ]
 
+// app/pages/index.vue
+import { useConciergeSeo } from '../composables/useConciergeSeo'
+
 useHead({
   link: [{ rel: 'canonical', href: 'https://sreejith.brandsta.cc/' }]
 })
 
-useSeoMeta({
-  title: 'Digital Concierge | Sree Jith Travel - Brandsta',
-  robots: 'noindex, nofollow'
-})
+useConciergeSeo('hub')
+
 </script>
